@@ -1,0 +1,14 @@
+:host{
+    display: flex;
+    flex-direction: column;
+    mat-toolbar{
+
+    }
+    > *:nth-child(3){
+        flex:1 1 auto;
+        background-color: gold;
+    }
+.example-spacer {
+    flex: 1 1 auto;
+  }
+}
