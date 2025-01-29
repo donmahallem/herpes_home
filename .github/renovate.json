@@ -1,4 +1,4 @@
 {
-  "baseBranches": ["master"],
+  "baseBranches": ["main"],
   "extends": ["github>donmahallem/renovate-config"]
 }
