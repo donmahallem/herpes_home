@@ -5,15 +5,21 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { HomeListComponent } from './home-list.component';
+
+interface IRoutes {
+  name: string;
+  path: string;
+  external?: boolean;
+}
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home-list',
   standalone: true,
-  imports: [MatSlideToggleModule, HomeListComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  imports: [MatCardModule, MatButtonModule],
+  templateUrl: './home-list.component.html',
+  styleUrl: './home-list.component.scss',
 })
-export class HomeComponent {
+export class HomeListComponent {
   title = 'herpes_home';
+  items: IRoutes[] = [];
 }
