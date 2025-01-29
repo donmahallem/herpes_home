@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:21.5-alpine AS apline_container
+FROM --platform=$BUILDLATFORM node:21.5-alpine AS apline_container
 
 # Build server
 FROM apline_container AS build_server
@@ -16,7 +16,7 @@ RUN npm ci
 RUN npm run build
 
 # Build Final Image
-FROM apline_container
+FROM --platform=$TARGETLATFORM  apline_container
 
 LABEL org.opencontainers.image.title="Herpes_Home"
 LABEL org.opencontainers.image.description="Herpes_Home Docker Image"
