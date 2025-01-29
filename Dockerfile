@@ -16,7 +16,7 @@ RUN npm ci
 RUN npm run build
 
 # Build Final Image
-FROM --platform=$TARGETLATFORM  apline_container
+FROM --platform=$TARGETPLATFORM  apline_container
 
 LABEL org.opencontainers.image.title="Herpes_Home"
 LABEL org.opencontainers.image.description="Herpes_Home Docker Image"
