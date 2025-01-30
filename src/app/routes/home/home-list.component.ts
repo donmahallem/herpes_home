@@ -13,11 +13,10 @@ interface IRoutes {
 }
 
 @Component({
-  selector: 'app-home-list',
-  standalone: true,
-  imports: [MatCardModule, MatButtonModule],
-  templateUrl: './home-list.component.html',
-  styleUrl: './home-list.component.scss',
+    selector: 'app-home-list',
+    imports: [MatCardModule, MatButtonModule],
+    templateUrl: './home-list.component.html',
+    styleUrl: './home-list.component.scss'
 })
 export class HomeListComponent {
   title = 'herpes_home';

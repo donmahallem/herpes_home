@@ -8,11 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomeListComponent } from './home-list.component';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [MatSlideToggleModule, HomeListComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [MatSlideToggleModule, HomeListComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
   title = 'herpes_home';

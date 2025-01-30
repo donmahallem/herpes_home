@@ -7,11 +7,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-hass-home',
-  standalone: true,
-  imports: [MatSlideToggleModule, MatCardModule, MatButtonModule],
-  templateUrl: './hass-home.component.html',
-  styleUrl: './hass-home.component.scss',
+    selector: 'app-hass-home',
+    imports: [MatSlideToggleModule, MatCardModule, MatButtonModule],
+    templateUrl: './hass-home.component.html',
+    styleUrl: './hass-home.component.scss'
 })
 export class HassHomeComponent {
   title = 'herpes_home';
