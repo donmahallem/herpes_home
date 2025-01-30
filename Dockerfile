@@ -1,5 +1,6 @@
 FROM --platform=$TARGETPLATFORM node:23.6-alpine AS apline_container
 
+ARG APP_PORT=4000
 # Build server
 FROM apline_container AS build_server
 
@@ -20,7 +21,7 @@ FROM apline_container
 LABEL org.opencontainers.image.title="Herpes_Home"
 LABEL org.opencontainers.image.description="Herpes_Home Docker Image"
 
-ENV MW_PORT=3000
+ENV PORT=$APP_PORT
 
 WORKDIR /usr/src/app
 COPY --from=build_server --chown=node:node /usr/src/app/package*.json ./
@@ -28,10 +29,10 @@ COPY --from=build_server --chown=node:node /usr/src/app/package*.json ./
 COPY --from=build_server --chown=node:node /usr/src/app/dist ./dist
 
 ENV NODE_ENV="production"
-RUN npm ci --production && \
-    npm cache clean --force
+#RUN npm ci --production && \
+#    npm cache clean --force
 
-EXPOSE 4000
+EXPOSE $APP_PORT
 
 USER node
 ENTRYPOINT ["npm","run","serve:ssr:herpes_home"]
