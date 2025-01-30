@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM node:21.5-alpine AS apline_container
+FROM --platform=$TARGETPLATFORM node:22.13-alpine AS apline_container
 
 # Build server
 FROM apline_container AS build_server
