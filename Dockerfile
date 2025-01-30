@@ -1,6 +1,5 @@
-FROM --platform=$TARGETPLATFORM node:22.13-alpine AS apline_container
+FROM --platform=$TARGETPLATFORM node:23.6-alpine AS apline_container
 
-RUN npm install -g npm@11.1.0
 # Build server
 FROM apline_container AS build_server
 
