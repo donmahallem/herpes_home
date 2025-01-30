@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 RUN apk --no-cache add git
 RUN git clone https://github.com/donmahallem/herpes_home.git .
-RUN npm ci
+RUN npm ci --verbose
 RUN npm run build
 
 # Build Final Image
