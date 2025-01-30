@@ -5,8 +5,12 @@ FROM apline_container AS build_server
 
 WORKDIR /usr/src/app
 
-RUN apk --no-cache add git
-RUN git clone https://github.com/donmahallem/herpes_home.git .
+#RUN apk --no-cache add git
+COPY ./src ./src
+COPY ./package*.json ./
+COPY ./server.ts ./
+COPY ./tsconfig*.json ./
+COPY ./angular.json ./
 RUN npm ci --verbose
 RUN npm run build
 
