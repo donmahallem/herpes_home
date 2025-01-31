@@ -20,16 +20,20 @@ jobs:
         uses: actions/setup-node@v4.2.0
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm" # Step 2: Use npm caching for faster dependency installs.
+          cache: "npm"
 
       - name: Install Node.js dependencies
-        run: npm ci # Step 3: Perform a clean install of Node.js dependencies.
+        run: npm ci
 
       - name: Run build
-        run: npm run build # Step 4: Run tests using the specified Node.js version.
+        run: npm run build
 
       - name: Run Tests
-        run: npm run test:ci # Step 4: Run tests using the specified Node.js version.
+        run: npm run test:ci
+
+      - name: Run Lint
+        run: npm run lint
+
   status-check:
     if: always()
     needs:
