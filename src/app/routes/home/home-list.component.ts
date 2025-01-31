@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 
 interface IRoutes {
   name: string;
@@ -13,10 +9,10 @@ interface IRoutes {
 }
 
 @Component({
-    selector: 'app-home-list',
-    imports: [MatCardModule, MatButtonModule],
-    templateUrl: './home-list.component.html',
-    styleUrl: './home-list.component.scss'
+  selector: 'app-home-list',
+  imports: [MatCardModule, MatButtonModule],
+  templateUrl: './home-list.component.html',
+  styleUrl: './home-list.component.scss',
 })
 export class HomeListComponent {
   title = 'herpes_home';
