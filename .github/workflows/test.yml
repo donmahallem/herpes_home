@@ -27,3 +27,6 @@ jobs:
 
       - name: Run build
         run: npm run build # Step 4: Run tests using the specified Node.js version.
+
+      - name: Run Tests
+        run: npm run test:ci # Step 4: Run tests using the specified Node.js version.
