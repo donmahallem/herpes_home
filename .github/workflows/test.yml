@@ -30,3 +30,12 @@ jobs:
 
       - name: Run Tests
         run: npm run test:ci # Step 4: Run tests using the specified Node.js version.
+  status-check:
+    if: always()
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: re-actors/alls-green@release/v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
