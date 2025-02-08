@@ -36,6 +36,7 @@ jobs:
 
   status-check:
     if: always()
+    name: Finish Test
     needs:
       - build
     runs-on: ubuntu-latest
