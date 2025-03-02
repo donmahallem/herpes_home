@@ -1,4 +1,4 @@
-FROM --platform=$TARGETPLATFORM node:23.8-alpine AS apline_container
+FROM --platform=$TARGETPLATFORM node:23.9-alpine AS apline_container
 
 ARG APP_PORT=4000
 # Build server
