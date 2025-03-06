@@ -1,43 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
-@use '@angular/material' as mat;
-
+@use "@angular/material" as mat;
+@use "sass:map";
 @include mat.elevation-classes();
 @include mat.app-background();
-@import './themes.scss';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-// Include the alternative theme styles inside of a block with a CSS class. You can make this
-// CSS class whatever you want. In this example, any component inside of an element with
-// `.unicorn-dark-theme` will be affected by this alternate dark theme instead of the default theme.
-
-@mixin manniwatch-base-theme($theme) {
-    $background: map-get($theme, background);
-    $background-background: map-get($background, background);
-    div.overlay-box {
-        div.router-box {
-            > *:not(:first-child) {
-                background-color: $background-background;
-            }
-        }
-    }
-    background-color: $background-background;
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 body {
-    @include mat.all-component-themes($manniwatch-light-theme);
-    @include manniwatch-base-theme($manniwatch-light-theme);
-    @media (prefers-color-scheme: dark) {
-        @include manniwatch-base-theme($manniwatch-dark-theme);
-    }
-}
-body[theme='dark'] {
-    @include mat.all-component-colors($manniwatch-dark-theme);
-    @include manniwatch-base-theme($manniwatch-dark-theme);
+  color-scheme: light dark;
+  & {
+    background: var(--mat-sys-surface);
+
+    color: var(--mat-sys-on-surface);
+  }
+  @include mat.theme(
+    (
+      color: mat.$violet-palette,
+      typography: Roboto,
+      density: 0,
+    )
+  );
 }
 
-body[theme='light'] {
-    @include manniwatch-base-theme($manniwatch-light-theme);
+body[theme="dark"] {
+  color-scheme: dark;
+}
+
+body[theme="light"] {
+  color-scheme: light;
 }
